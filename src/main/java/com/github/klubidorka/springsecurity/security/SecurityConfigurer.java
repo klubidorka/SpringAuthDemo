@@ -1,5 +1,6 @@
-package com.github.klubidorka.springsecurity;
+package com.github.klubidorka.springsecurity.security;
 
+import com.github.klubidorka.springsecurity.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

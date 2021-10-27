@@ -6,10 +6,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("")
-public class HelloResource {
+public class MainController {
 
-    @GetMapping({"/hello"})
+    @GetMapping({"/start"})
     public String hello() {
         return "Hello, World!";
+    }
+
+    @GetMapping({"/other"})
+    public String other() {
+        return "Other page";
     }
 }
