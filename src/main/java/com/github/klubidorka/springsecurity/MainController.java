@@ -19,7 +19,7 @@ public class MainController {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private JwtUtil jwtTokenUtil;
+    private JwtUtil jwtUtil;
 
     @Autowired
     private MyUserDetailsService userDetailsService;
@@ -43,7 +43,7 @@ public class MainController {
 
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
 
-        final String jwt = jwtTokenUtil.generateToken(userDetails);
+        final String jwt = jwtUtil.generateToken(userDetails);
 
         return ResponseEntity.ok(new AuthenticationResponse(jwt));
     }
