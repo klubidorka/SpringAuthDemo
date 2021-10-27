@@ -1,6 +1,6 @@
 package com.github.klubidorka.springsecurity.filters;
 
-import com.github.klubidorka.springsecurity.MyUserDetailsService;
+import com.github.klubidorka.springsecurity.service.MyUserDetailsService;
 import com.github.klubidorka.springsecurity.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

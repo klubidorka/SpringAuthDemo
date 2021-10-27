@@ -1,6 +1,7 @@
-package com.github.klubidorka.springsecurity;
+package com.github.klubidorka.springsecurity.security;
 
 import com.github.klubidorka.springsecurity.filters.JwtRequestFilter;
+import com.github.klubidorka.springsecurity.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -41,7 +42,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable()
-                .authorizeRequests().antMatchers("/authenticate").permitAll().
+                .authorizeRequests().antMatchers("/auth").permitAll().
                 anyRequest().authenticated().and().
                 exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);

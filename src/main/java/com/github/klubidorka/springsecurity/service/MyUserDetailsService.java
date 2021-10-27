@@ -1,4 +1,4 @@
-package com.github.klubidorka.springsecurity;
+package com.github.klubidorka.springsecurity.service;
 
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,6 +13,6 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        return new User("foo", "foo", new ArrayList<>());
+        return new User("name", "pass", new ArrayList<>());
     }
 }

@@ -2,9 +2,9 @@ package com.github.klubidorka.springsecurity;
 
 import com.github.klubidorka.springsecurity.models.AuthenticationRequest;
 import com.github.klubidorka.springsecurity.models.AuthenticationResponse;
+import com.github.klubidorka.springsecurity.service.MyUserDetailsService;
 import com.github.klubidorka.springsecurity.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class HelloResource {
+public class MainController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -24,12 +24,12 @@ public class HelloResource {
     @Autowired
     private MyUserDetailsService userDetailsService;
 
-    @GetMapping({"/hello"})
+    @GetMapping({"/start"})
     public String hello() {
         return "Hello, World!";
     }
 
-    @PostMapping(value = "/authenticate")
+    @PostMapping(value = "/auth")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
 
         try {
